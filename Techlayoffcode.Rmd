@@ -1,7 +1,7 @@
 ---
-title: 'Homework ## Template'
-author: "Your Name Here"
-date: "Date Here"
+title: 'Techlayoff Analysis'
+author: "Hilena Shekour"
+date: 
 output:
   pdf_document: default
 header-includes:
