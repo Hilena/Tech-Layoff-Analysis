@@ -1,0 +1,147 @@
+---
+title: 'Homework ## Template'
+author: "Your Name Here"
+date: "Date Here"
+output:
+  pdf_document: default
+header-includes:
+  \usepackage{amsmath}
+  \usepackage{bm}
+---
+
+```{r, include=FALSE}
+# Insert packages you need here
+# Set include=FALSE to hide code and output
+# Do this when loading packages
+library(knitr)
+library(ggplot2)
+```
+
+
+# About this template
+
+This file provides a template that you should use for homework assignments. 
+
+## R Markdown 
+
+Markdown is a simple formatting syntax for writing HTML, PDF, and Word documents using a common interface. This template is setup to generate pdf or MS Word (doc) files, since those are well-supported by the Canvas system. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+You can enter text into the document using the editor built into RStudio. When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+# R code goes in blocks like this one.
+# Use comments to help document your code
+head(iris)
+```
+
+In general, your homework responses should include R code. Raw R output should also be included, but should be hidden if asked for, especially if the raw R output is excessively long.
+To prevent the text output from being printed, set `results='hide'` in the code block header. For example:
+
+```{r, results='hide'}
+# Viewing the iris dataset, the second time
+# Text output from R is hidden
+head(iris)
+```
+
+You may hide the R code by setting `echo=FALSE`. For example:
+```{r, echo=FALSE}
+# Viewing the iris dataset, the third time
+# R code is hidden, only the output is shown
+head(iris)
+```
+
+Documentation for other chunk options is available at <https://yihui.name/knitr/options/>
+
+## Headings
+
+If using this template for your homework, delete the text within these sections and add your homework answers.
+
+Type `# Question (number here)` on a line to create a header for each question. For problems with sub-parts, a secondary heading can be created by typing `## Part (letter here)` on a new line.
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r, out.width="75%"}
+# Code for the plot here
+ggplot(pressure) + 
+    geom_point(aes(x=temperature, y=pressure)) +
+    xlab("Temperature (deg C)") + ylab("Pressure (mmHg)")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot. It would not work in this case to set `include=FALSE`, since that would also hide the plot output.
+
+## Including Math
+
+RMarkdown allows you to easily incorporate formatted mathematical notation using LaTeX. Mathematical expressions should be typed between dollar signs (\$). For example, we can write $x + y$. 
+
+* Subscripts can be added using underscore: $x_1$
+* Superscripts can be added using the caret character: $x^2$
+* Greek letters can be added by typing \\ followed by the letter name: $\beta$
+* Equations can be centered and set off from text using two dollar signs: $$a^2 + b^2 = c^2$$
+or using `\begin{align*}` and `\end{align*}`:
+\begin{align*}
+a^2 + b^2 &= c^2 \\
+\exp(ix) &= \cos(x) + i \sin (x)
+\end{align*}
+* Bold-faced and tilted letters can be added using `\bm`: $\bm x_1$, $\bm X_1$
+* Bold-faced and upright letters can be added using `\mathbf`: $\mathbf X$
+* Matrices can be typed using `\begin{bmatrix}` and `\end{bmatrix}`:
+$\begin{bmatrix} x_{11} & x_{12} & \ldots & x_{1p}\\
+x_{21} & x_{22} & \ldots & x_{2p}\\
+\vdots & \vdots & \ddots & \vdots\\
+x_{n1} & x_{n2} & \ldots & x_{np} 
+\end{bmatrix}$, 
+$\begin{bmatrix} 1 & 2 & 3\\
+4 & 5 & 6
+\end{bmatrix}$
+
+## Including Handwritten Notes as a Figure
+
+If instructed, you may complete a math question on a piece of paper. Please take a photo of your solution (or scan it), save it as a .jpeg, .png, .pdf file, or something else. Then, use `knitr::include_graphics()` to attach it to your R Markdown file.
+
+```{r, echo=FALSE, fig.cap="Math derivation for Question x", out.width='60%', fig.align="center"}
+knitr::include_graphics("./math_question_example.jpeg")
+```
+
+## Installation of LaTeX
+
+Note: Creating a MS Word document does not require an installation of LaTeX on your computer. Creating a PDF output file does. A simple way to do this to install 'tinytex' by running the following commands:
+
+```{r echo=TRUE, eval=FALSE}
+# Only need to do this *once* for your computer
+# in order to be able to create PDFs with math notation
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
+
+
+# Question 1
+
+## Part 1(a)
+Responses here
+
+## Part 1(b)
+Responses here
+
+# Question 2
+Responses here.
+
+# Question 3
+
+The figure for this question is:
+
+```{r, out.width="75%"}
+# Code for the plot here
+ggplot(pressure) + 
+    geom_point(aes(x=temperature, y=pressure)) +
+    xlab("Temperature (deg C)") + ylab("Pressure (mmHg)")
+```
+
+
+# Appendix
+
+```{r show-code, ref.label = all_labels(), echo = TRUE, eval = FALSE}
+
+```
